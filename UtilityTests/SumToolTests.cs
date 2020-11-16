@@ -12,5 +12,11 @@ namespace UtilityTests
         {
             Assert.AreEqual(new SumTool().Sum(Array.Empty<int>()), 0);
         }
+
+        [TestMethod]
+        public void SumSingleValueShouldReturnValue()
+        {
+            Assert.AreEqual(new SumTool().Sum(new[] { 100 }), 100);
+        }
     }
 }
