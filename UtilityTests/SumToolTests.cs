@@ -10,20 +10,20 @@ namespace UtilityTests
         [Test]
         public void SumEmptyShouldReturnZero()
         {
-            Assert.AreEqual(new SumTool().Sum(Array.Empty<int>()), 0);
+            Assert.AreEqual(0, new SumTool().Sum(Array.Empty<int>()));
         }
 
         [Test]
         public void SumSingleValueShouldReturnValue()
         {
-            Assert.AreEqual(new SumTool().Sum(new[] { 100 }), 100);
+            Assert.AreEqual(100, new SumTool().Sum(new[] { 100 }));
         }
 
         [Test]
         public void SumTwoValuesShouldReturnTheAddition()
         {
-            Assert.AreEqual(new SumTool().Sum(new[] { 100, 100 }), 200);
-            Assert.AreEqual(new SumTool().Sum(new[] { 100, -100 }), 1);
+            Assert.AreEqual(200, new SumTool().Sum(new[] { 100, 100 }));
+            Assert.AreEqual(0, new SumTool().Sum(new[] { 100, -100 }));
         }
 
     }
