@@ -22,6 +22,12 @@ jobs:
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@2008f912f56e61277eefaac6d1888b750582aa16
+      
+    - name: Setup Nuget.exe
+      uses: warrenbuckley/Setup-Nuget@v1
+      
+    - name: Restore Nuget packages
+      run: nuget restore FrameworkTests.sln
 
     - name: Build Release
       # Some projects don't allow in-source building, so create a separate build directory
