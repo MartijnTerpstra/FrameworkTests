@@ -18,5 +18,11 @@ namespace UtilityTests
         {
             Assert.AreEqual(new SumTool().Sum(new[] { 100 }), 100);
         }
+
+        [TestMethod]
+        public void SumTwoValuesShouldReturnTheAddition()
+        {
+            Assert.AreEqual(new SumTool().Sum(new[] { 100, 100 }), 200);
+        }
     }
 }
