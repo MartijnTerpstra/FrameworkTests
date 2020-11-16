@@ -1,25 +1,25 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using System;
 using Utility;
 
 namespace UtilityTests
 {
-    [TestClass]
+    [TestFixture]
     public class SumToolTests
     {
-        [TestMethod]
+        [Test]
         public void SumEmptyShouldReturnZero()
         {
             Assert.AreEqual(new SumTool().Sum(Array.Empty<int>()), 0);
         }
 
-        [TestMethod]
+        [Test]
         public void SumSingleValueShouldReturnValue()
         {
             Assert.AreEqual(new SumTool().Sum(new[] { 100 }), 100);
         }
 
-        [TestMethod]
+        [Test]
         public void SumTwoValuesShouldReturnTheAddition()
         {
             Assert.AreEqual(new SumTool().Sum(new[] { 100, 100 }), 200);
