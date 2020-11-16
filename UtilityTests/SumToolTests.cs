@@ -23,7 +23,7 @@ namespace UtilityTests
         public void SumTwoValuesShouldReturnTheAddition()
         {
             Assert.AreEqual(new SumTool().Sum(new[] { 100, 100 }), 200);
-            Assert.AreEqual(new SumTool().Sum(new[] { 100, -100 }), 0);
+            Assert.AreEqual(new SumTool().Sum(new[] { 100, -100 }), 1);
         }
 
     }
