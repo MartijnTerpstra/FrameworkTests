@@ -53,17 +53,17 @@ jobs:
       
     - name: Checking for Prefer 32-bit enabled
       working-directory: ./build
-      run: Start-Process -NoNewWindow ../tools/ProjectChecker/bin/Release/netcoreapp3.1/ProjectChecker.exe check-prefer-32-bit-disabled
+      run: ../tools/ProjectChecker/bin/Release/netcoreapp3.1/ProjectChecker.exe check-prefer-32-bit-disabled
       
     - name: Checking for project name/folder missmatch
       working-directory: ./build
-      run: Start-Process -NoNewWindow ../tools/ProjectChecker/bin/Release/netcoreapp3.1/ProjectChecker.exe check-directory-name
+      run: ../tools/ProjectChecker/bin/Release/netcoreapp3.1/ProjectChecker.exe check-directory-name
       
     - name: Checking for disabled optimization
       working-directory: ./build
-      run: Start-Process -NoNewWindow ../tools/ProjectChecker/bin/Release/netcoreapp3.1/ProjectChecker.exe check-optimization-disabled
+      run: ../tools/ProjectChecker/bin/Release/netcoreapp3.1/ProjectChecker.exe check-optimization-disabled
       
     - name: Checking for full debugging information
       working-directory: ./build
-      run: Start-Process -NoNewWindow ../tools/ProjectChecker/bin/Release/netcoreapp3.1/ProjectChecker.exe check-full-debug-info-enabled
+      run: ../tools/ProjectChecker/bin/Release/netcoreapp3.1/ProjectChecker.exe check-full-debug-info-enabled
         
