@@ -7,6 +7,7 @@ on:
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: True
 
 jobs:
   build:
@@ -34,4 +35,10 @@ jobs:
 
     - name: Run Tests
       shell: powershell
-      run: $x = ""; Get-ChildItem -path . -Recurse -Include *Tests.dll | where { $_.FullName -match "bin" }  | foreach { $x += " ""$_""" }; iex "dotnet test $x"
+      run: $x = ""; Get-ChildItem -path . -Recurse -Include *Tests.dll | where { $_.FullName -match "bin" }  | foreach { $x += " ""$_""" }; iex "dotnet test --logger ""trx;LogFileName=TestResults.trx"" $x"
+    
+    - name: Archive test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: results.trx
+        path: TestResults/TestResults.trx
