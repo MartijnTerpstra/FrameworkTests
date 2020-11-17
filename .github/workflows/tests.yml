@@ -31,7 +31,7 @@ jobs:
       run: nuget restore FrameworkTests.sln
 
     - name: Build Release
-      run: msbuild FrameworkTests.sln /property:Configuration=Release
+      run: msbuild FrameworkTests.sln "/property:Configuration=Release"
 
     - name: Run Tests
       shell: powershell
